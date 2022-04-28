@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ByteBank.Models</name>
+    </assembly>
+    <members>
+        <member name="T:ByteBank.Models.AutenticationHelper">
+            <summary>
+            Classe Helper para as autenticações do sistema
+            </summary>
+        </member>
+        <member name="M:ByteBank.Models.AutenticationHelper.ComparePasswords(System.String,System.String)">
+            <summary>
+            Compara duas senhas e retorna se a senha informada é válida
+            </summary>
+            <param name="truePassword">A senha correta</param>
+            <param name="inputPassword">A senha que o usuário informou</param>
+            <returns></returns>
+        </member>
+        <member name="T:ByteBank.BonusManager">
+            <summary>
+            Classe para totalizar as bonificações dos funcionários
+            </summary>
+        </member>
+        <member name="T:ByteBank.CheckingAccount">
+            <summary>
+            Classe para representar uma Conta Corrente do banco ByteBank.
+            </summary>
+        </member>
+        <member name="M:ByteBank.CheckingAccount.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Cria uma instância de ContaCorrente com os argumentos utilizados.
+            </summary>
+            <param name="branch">Representa o valor da propriedade <see cref="P:ByteBank.CheckingAccount.Branch"/> e deve possuir um valor maior que zero.</param>
+            <param name="number">Representa o valor da propriedade  <see cref="P:ByteBank.CheckingAccount.Number"/> e deve possuir um valor maior que zero.</param>
+        </member>
+        <member name="M:ByteBank.CheckingAccount.Withdraw(System.Double)">
+            <summary>
+            Realiza o saque e atualiza o valor da propriedade <see cref="P:ByteBank.CheckingAccount.Balance"/>.
+            </summary>
+            <param name="value">Representa o valor do saque, deve ser maior que 0 e menor que o <see cref="P:ByteBank.CheckingAccount.Balance"/>.</param>
+            <exception cref="T:System.ArgumentException"> Exceção lançada quando um valor negativo é utilizado no argumento <paramref name="value"/>. </exception>
+            <exception cref="T:ByteBank.InsufficientFundsException"> Exceção lançada quando o valor de <paramref name="value"/> é maior que o valor da propriedade <see cref="P:ByteBank.CheckingAccount.Balance"/>. </exception>
+        </member>
+        <member name="M:ByteBank.CheckingAccount.Transferir(System.Double,ByteBank.CheckingAccount)">
+            <summary>
+            Realiza uma transferência e atualiza o valor da propriedade <see cref="P:ByteBank.CheckingAccount.Balance"/>.
+            </summary>
+            <param name="value">Representa o valor da transferência, deve ser maior que 0 e menor que o <see cref="P:ByteBank.CheckingAccount.Balance"/>.</param>
+            <exception cref="T:System.ArgumentException"> Exceção lançada quando um valor negativo é utilizado no argumento <paramref name="value"/>. </exception>
+            <exception cref="T:ByteBank.FinancialTransactionException"> Exceção lançada quando ocorre um erro no método <see cref="M:ByteBank.CheckingAccount.Withdraw(System.Double)"/>. </exception>
+        </member>
+        <member name="T:ByteBank.Client">
+            <summary>
+            Classe para representar um cliente do banco ByteBank. 
+            </summary>
+        </member>
+        <member name="P:ByteBank.Client.Name">
+            <summary>
+            Nome do cliente
+            </summary>
+        </member>
+        <member name="P:ByteBank.Client.IdDoc">
+            <summary>
+            Documento de identidade
+            </summary>
+        </member>
+        <member name="P:ByteBank.Client.Profession">
+            <summary>
+            Profissão
+            </summary>
+        </member>
+        <member name="T:ByteBank.CommercialPartner">
+            <summary>
+            Classe para representar um parceiro comercial do banco ByteBank. 
+            </summary>
+        </member>
+        <member name="P:ByteBank.CommercialPartner.Password">
+            <summary>
+            Senha do usuário
+            </summary>
+        </member>
+        <member name="M:ByteBank.CommercialPartner.Authenticate(System.String)">
+            <summary>
+            Autenticação do usuário
+            </summary>
+            <param name="password">senha informada pelo usuário para tentativa de autenticação</param>
+            <returns></returns>
+        </member>
+        <member name="T:ByteBank.Employees.AccountManager">
+            <summary>
+            Classe para representar um Gerente de Contas (funcionário) do banco ByteBank. 
+            </summary>
+        </member>
+        <member name="T:ByteBank.Employees.Assistant">
+            <summary>
+            Classe para representar um Assistente (funcionário) do banco ByteBank. 
+            </summary>
+        </member>
+        <member name="T:ByteBank.Employees.Designer">
+            <summary>
+            Classe para representar um Designer (funcionário) do banco ByteBank. 
+            </summary>
+        </member>
+        <member name="T:ByteBank.Employees.Developer">
+            <summary>
+            Classe para representar um Desenvolvedor (funcionário) do banco ByteBank. 
+            </summary>
+        </member>
+        <member name="T:ByteBank.Employees.Director">
+            <summary>
+            Classe para representar um Diretor (funcionário) do banco ByteBank. 
+            </summary>
+        </member>
+        <member name="T:ByteBank.Employees.Employee">
+            <summary>
+            Classe abstrata para representar um funcionário do banco ByteBank. 
+            </summary>
+        </member>
+        <member name="P:ByteBank.Employees.Employee.Name">
+            <summary>
+            Nome do funcionário
+            </summary>
+        </member>
+        <member name="P:ByteBank.Employees.Employee.DocId">
+            <summary>
+            Documento de identificação
+            </summary>
+        </member>
+        <member name="P:ByteBank.Employees.Employee.Wage">
+            <summary>
+            Salário do funcionário
+            </summary>
+        </member>
+        <member name="P:ByteBank.Employees.Employee.TotalEmployees">
+            <summary>
+            Total de empregados
+            </summary>
+        </member>
+        <member name="M:ByteBank.Employees.Employee.#ctor(System.Double,System.String)">
+            <summary>
+            Construtor da classe
+            </summary>
+            <param name="wage">Salário do funcionário</param>
+            <param name="docId">Documento de identificação do funcionário</param>
+        </member>
+        <member name="M:ByteBank.Employees.Employee.GetBonus">
+            <summary>
+            Retornar a bonificação do funcionário
+            </summary>
+        </member>
+        <member name="M:ByteBank.Employees.Employee.WageIncrease">
+            <summary>
+            Aumentar o salário do funcionário
+            </summary>
+        </member>
+        <member name="T:ByteBank.FinancialTransactionException">
+            <summary>
+            Exceção genérica para tratar erros referentes a transações financeiras
+            </summary>
+        </member>
+        <member name="T:ByteBank.Systems.IAuthenticable">
+            <summary>
+            Interface para usuários autenticáveis
+            </summary>
+        </member>
+        <member name="M:ByteBank.Systems.IAuthenticable.Authenticate(System.String)">
+            <summary>
+            Método para autenticação do usuário
+            </summary>
+            <param name="password">Senha fornecida pelo usuário</param>
+            <returns></returns>
+        </member>
+        <member name="T:ByteBank.InsufficientFundsException">
+            <summary>
+            Exceção para tratar erros referentes a falta de saldo nas contas dos clientes
+            </summary>
+        </member>
+    </members>
+</doc>

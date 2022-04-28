@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\OneDrive\My documents\Projects\code\CSharp\alura-csharp\alura-csharp-5-dll-libraries\ByteBank\ByteBank.Models\ByteBank.Models.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Employees\" />
+  </ItemGroup>
+
+</Project>
